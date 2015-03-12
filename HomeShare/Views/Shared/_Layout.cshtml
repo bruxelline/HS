@@ -1,0 +1,160 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewBag.Title - HomeShare</title>
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</head>
+
+<body>
+
+
+    <!-- Header Starts -->
+    <div class="navbar-wrapper">
+
+        <div class="navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+
+                <!-- Nav Starts -->
+                <div class="navbar-collapse  collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="~/Home/Index">Home</a></li>
+                        <li><a href="about.php">A propos de nous</a></li>
+                        <li><a href="agents.php">Les proprietaires</a></li>
+                        <li><a href="blog.php">Les biens en echange</a></li>
+                        <li><a href="contact.php">Contactez-nous</a></li>
+                    </ul>
+                </div>
+                <!-- #Nav Ends -->
+
+            </div>
+        </div>
+
+    </div>
+    <!-- #Header Starts -->
+
+
+    <div class="container">
+
+        <!-- Header Starts -->
+        <div class="header">
+            <a href="#"><img src="~/Content/img/logo.png" alt="Realestate"></a>
+
+            <ul class="pull-right">
+                <li><a href="#">Echanger</a></li>
+                <li><a href="#">Visiter</a></li>
+                <li><a href="~/Member/Home/Index">Se connecter</a></li>
+            </ul>
+        </div>
+        <!-- #Header Starts -->
+        <div id="container">
+            <div class="row">
+                <div class="rubrique">
+                    <div class="bs-example">
+                        <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item">
+                                    <!--     <h2>Slide 1</h2>  -->
+                                    <div class="carousel-caption">
+                                        <img src="~/images/consultation.jpg" width="350" height="180">
+                                        <h3>Consultations</h3>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <!--  <h2>Slide 2</h2> -->
+                                    <div class="carousel-caption">
+                                        <img src="~/images/examens.jpg" width="350" height="180">
+                                        <h3>Examens</h3>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <!-- <h2>Slide 3</h2> -->
+                                    <div class="carousel-caption">
+                                        <img src="~/images/rdv.jpg" width="350" height="180">
+                                        <h3>Rendez-vous</h3>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-3">
+                            <h4>Information</h4>
+
+
+                        </div>
+
+                        <div class="col-lg-3 col-sm-3">
+                            <h4>Newsletter</h4>
+
+                        </div>
+
+                        <div class="col-lg-3 col-sm-3">
+                            <h4>Suivez Nous</h4>
+
+                        </div>
+
+                        <div class="col-lg-3 col-sm-3">
+                            <h4>Contactez-nous</h4>
+
+                        </div>
+                    </div>
+                    <p class="copyright">Copyright 2013. All rights reserved.	</p>
+
+
+            </div>
+        </div>
+
+    </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

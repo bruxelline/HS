@@ -1,0 +1,59 @@
+﻿@model HomeShareDAL.BienEchange
+
+@{
+    ViewBag.Title = "AjouterBienMembre";
+}
+
+
+<div class="inside-banner">
+    <div class="container">
+        <span class="pull-right"><a href="#">Home</a> / Bien</span>
+        <h2>Ajouter un bien</h2>
+    </div>
+</div>
+<div class="container">
+    <div class="spacer">
+        <div class="row register">
+
+            <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
+
+                <form class="" role="form" action="~/Member/Home/AujouterBienMembre" method="post">
+                    <input type="text" class="form-control" placeholder="Titre" name="txtTitre">
+                    <input type="text" class="form-control" placeholder="DescriptionCourte" name="txtdescCourt">
+                    <input type="text" class="form-control" placeholder="DescriptionLongue" name="txtdescLong">
+                    <label>Pays :</label></br>
+                    <select name="IdPays">
+                        @{
+                            List<HomeShareDAL.Pays> lstPays = HomeShareDAL.Pays.ChargerTousLesPays();
+                            foreach (HomeShareDAL.Pays item in lstPays)
+                            {
+                                <option value="@item.IdPays">@item.Libelle</option>
+                            }
+                        }
+                    </select>
+                    <input type="text" class="form-control" placeholder="Ville" name="txtVille">
+                    <input type="text" class="form-control" placeholder="Rue" name="txtRue">
+                    <input type="text" class="form-control" placeholder="Numero" name="txtNumero">
+                    <input type="text" class="form-control" placeholder="CodePostal" name="txtCP">
+                    <input type="File" name="Fclient">
+                    <label>Assurance obligatoire :</label><input type="checkbox" name="txtAssurance"><br>
+                    <label>IsEnabled :</label><input type="checkbox" name="txtDispo"><br>
+                    <input type="text" class="form-control" placeholder="Latitude" name="txtLat">
+                    <input type="text" class="form-control" placeholder="Longitude" name="txtLong">
+                    <input type="date" class="form-control" placeholder="Date du jour" name="txtDate">
+                    <button type="submit" class="btn btn-success" name="Submit">Ajouter</button>
+                </form>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+   
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+  

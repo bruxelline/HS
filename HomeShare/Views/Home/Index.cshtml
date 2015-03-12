@@ -1,0 +1,52 @@
+﻿
+@model IEnumerable<HomeShareDAL.BienEchange>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<p>Les meilleurs echanges</p>
+
+@foreach (var item in Model)
+{
+    Html.RenderPartial("_MeilleursEchanges", item);
+}
+
+
+<p>Les derniers biens en echange</p>
+
+<div class="row text-center">
+
+    @foreach (var item in Model)
+    {
+        Html.RenderPartial("_DerniersBiens", item);
+    }
+
+    @{
+        int page = 1;
+        int prev = -1;
+        int Next = 2;
+        if (Request.RequestContext.RouteData.Values["Page"] != null)
+        {
+            page = int.Parse(Request.RequestContext.RouteData.Values["Page"].ToString());
+        }
+        if (page > 0)
+        {
+            prev = page - 1;
+
+        }
+        if (page < ViewBag.tot)
+        {
+            Next = page + 1;
+        }
+
+    }
+</div>
+
+
+<center>
+    @if (page > 1)
+    { <a href="~/Home/Index/Page-@prev"><<</a>}
+    @page / @ViewBag.tot
+    @if (page < ViewBag.tot)
+    {<a href="~/Home/Index/Page-@Next">>></a>}
+</center>

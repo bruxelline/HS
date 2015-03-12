@@ -1,0 +1,25 @@
+﻿@using HomeShare.Helper
+@model IEnumerable<HomeShareDAL.Membre>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="header">
+    <div><a href="#"><img src="~/Content/img/logo.png" alt="Realestate"></a></div></br>
+
+    @Html.WelcomeTitle("Bienvenue chez vous,","bienvenue")
+
+    <h3>@HomeShare.Helper.Utils.Login</h3>
+
+    <div class="menu">
+    <ul class="pull-left">
+        <li><a href="~/Member/Home/ListeBiens">Mes biens</a></li>
+        <li><a href="~/Member/Home/AjouterBienMembre">Ajouter un bien</a></li>
+        <li><a href="~/Member/Home/EditBienMembre">Modifier un bien</a></li>
+        <li><a href="~/Member/Home/LogOut">Se deconnecter</a></li>
+    </ul>
+    </div>
+
+</div>
+
