@@ -11,7 +11,7 @@ namespace HomeShare
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/owl.carousel.js",
-                        "~/Scripts/jquery.ba-cond.min.js",     
+                        "~/Scripts/jquery.ba-cond.min.js",
                         "~/Scripts/jquery.slitslider.js"));
 
             // Utilisez la version de développement de Modernizr pour développer et apprendre. Puis, lorsque vous êtes

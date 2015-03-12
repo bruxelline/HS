@@ -143,21 +143,22 @@ namespace HomeShare.Areas.Member.Controllers
         }
 
 
-        public ActionResult ListeBiens()
+        public ActionResult ListBiensMembre(int id)
         {
-            if (Utils.Login == null)
-            {
-               return RedirectToAction("Login");
+            //if (Utils.Login == null)
+            //{
+               //return RedirectToAction("Login");
 
-             //MembreModel bmm = new MembreModel()
-             //   {
-             //       LstBiens = Membre.ChargerBienDuMembre()
-             //   };
+                MembreModel mm = new MembreModel()
+                   {
+                       TousLesBiensDuMembre = BienEchange.ChargerBienViaMembre(id),
+                       CurrentMembre = Membre.ChargerUnMembreViaId(id)
+                   };
+        
+                return View(mm);
+            
 
-             //   return View(bmm);
-            }
-
-            return View(HomeShareDAL.BienEchange.ChargerTousLesBiens());
+            //return View(HomeShareDAL.BienEchange.ChargerTousLesBiens());
           
         }
 

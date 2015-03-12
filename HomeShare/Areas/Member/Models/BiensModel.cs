@@ -6,18 +6,13 @@ using System.Web;
 
 namespace HomeShare.Areas.Member.Models
 {
-    public class MembreModel:BiensModel
-    {
-        public Membre CurrentMembre
-        {
-            get;
-            set;
-        }
-
-        public List<AvisMembreBien> ListeAvis
+    public class BiensModel
+    { 
+        public List<BienEchange> TousLesBiensDuMembre
         {
             get;
             set;
         }
     }
 }
+    

@@ -1,0 +1,26 @@
+﻿@model HomeShare.Models.DetailsBienModel
+
+@{
+    ViewBag.Title = "DetailsDuBien";
+}
+
+<h2>DetailsDuBien</h2>
+
+<div>
+    <h4>DetailsBienModel</h4>
+	
+   
+    <h5>@Model.CurrentBien.Photo</h5>
+    <h5>@Model.CurrentBien.Titre</h5>
+    
+   Adresse : <h5>@Model.CurrentBien.Numero - @Model.CurrentBien.Rue - @Model.CurrentBien.Ville - @Model.CurrentBien.CodePostal</h5>
+Capacité : <h5>@Model.CurrentBien.NombrePerson</h5>
+    <h5>@Model.CurrentBien.AssuranceObligatoire</h5>
+    Disponibilité : <h5>@Model.CurrentBien.IsEnabled</h5>
+   
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

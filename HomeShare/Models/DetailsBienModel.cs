@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using HomeShare.Areas.Member.Models;
 using HomeShareDAL;
 
-namespace HomeShare.Areas.Member.Models
+namespace HomeShare.Models
 {
-    public class BiensMembreModel
+    public class DetailsBienModel:MembreModel
     {
-
-        public List<BienEchange> LstBiens
+        public BienEchange CurrentBien
         {
             get;
             set;
         }
 
-        public string Titre
+        public Pays PaysDuBien
         {
             get;
             set;
         }
 
-        public string DescCourte
+        public List<OptionsBien> ListeOptions
         {
             get;
             set;
         }
 
-        public DateTime DateCreation
+        public List<Options> ListeLibelleOptions
         {
             get;
             set;

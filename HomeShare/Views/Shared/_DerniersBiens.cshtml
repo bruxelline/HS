@@ -3,24 +3,13 @@
     ViewBag.Title = "_DerniersBiens";
 }
 
-<div class="col-md-3 col-sm-6 hero-feature">
-    <div class="thumbnail">
-        <img src="~/Content/img/@Model.Photo" alt="" style="height:120px">
-        <div class="caption">
-            <h3>@Model.Titre</h3>
-            <p>
-                @{
-                    string resume = Model.DescLong;
-                    if (Model.DescLong.Length > 40)
-                    {
-                        resume = Model.DescLong.Substring(0, 40) + "...";
-                    }
-                }
-                @resume
-            </p>
-            <p>
-                <a href="~/Bien/Details/@Model.IdBien" class="btn btn-default">Lire plus ...</a>
-            </p>
-        </div>
+
+<div class="properties" style="width:300px;">
+    <div class="image-holder">
+        <img src="~/Content/img/@Model.Photo" class="img-responsive" alt="properties" />
+        <div class="status sold">@Model.IsEnabled</div>
     </div>
+    <h4><a href="property-detail.php">@Model.Titre</a></h4>
+    <p class="price">@Model.DescCourte</p>
+    <a class="btn btn-primary" href="property-detail.php">Voir Details</a>
 </div>

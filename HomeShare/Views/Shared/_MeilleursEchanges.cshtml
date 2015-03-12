@@ -10,17 +10,10 @@
         <div class="caption">
             <h3>@Model.Titre</h3>
             <p>
-                @{
-                    string resume = Model.DescLong;
-                    if (Model.DescLong.Length > 40)
-                    {
-                        resume = Model.DescLong.Substring(0, 40) + "...";
-                    }
-                }
-                @resume
+               @Model.DescCourte
             </p>
             <p>
-                <a href="~/Bien/Details/@Model.IdBien" class="btn btn-default">Lire plus ...</a>
+                <a class="btn btn-primary" href="~/Home/DetailsDuBien">Voir Details</a>
             </p>
         </div>
     </div>

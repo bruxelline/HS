@@ -4,27 +4,20 @@
     ViewBag.Title = "Home Page";
 }
 
-<p>Les meilleurs echanges</p>
-
-@foreach (var item in Model)
-{
-    Html.RenderPartial("_MeilleursEchanges", item);
-}
-
-
-<p>Les derniers biens en echange</p>
+<h3>Les meilleurs echanges</h3>
 
 <div class="row text-center">
 
     @foreach (var item in Model)
     {
-        Html.RenderPartial("_DerniersBiens", item);
+        Html.RenderPartial("_MeilleursEchanges", item);
     }
 
     @{
         int page = 1;
         int prev = -1;
         int Next = 2;
+       
         if (Request.RequestContext.RouteData.Values["Page"] != null)
         {
             page = int.Parse(Request.RequestContext.RouteData.Values["Page"].ToString());
@@ -45,8 +38,22 @@
 
 <center>
     @if (page > 1)
+        
     { <a href="~/Home/Index/Page-@prev"><<</a>}
+                                              
     @page / @ViewBag.tot
+
     @if (page < ViewBag.tot)
+        
     {<a href="~/Home/Index/Page-@Next">>></a>}
 </center>
+
+    <h3>Les derniers biens en echange</h3>
+
+    
+        @foreach (var item in Model)
+        {
+            Html.RenderPartial("_DerniersBiens", item);
+        }
+
+  

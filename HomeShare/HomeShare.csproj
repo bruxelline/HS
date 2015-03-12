@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Bien\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -117,7 +117,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Member\Controllers\HomeController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
-    <Compile Include="Areas\Member\Models\BiensMembreModel.cs" />
+    <Compile Include="Areas\Member\Models\BiensModel.cs" />
     <Compile Include="Areas\Member\Models\MembreModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -125,12 +125,14 @@
     </Compile>
     <Compile Include="Helper\CustomHtmlHelper.cs" />
     <Compile Include="Helper\Utils.cs" />
+    <Compile Include="Models\DetailsBienModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom.css" />
+    <Content Include="Content\img\rockHouse.jpg" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\maisonSousMarine.jpg" />
     <Content Include="Content\img\properties\1.jpg" />
@@ -154,7 +156,8 @@
     <Content Include="Areas\Member\Views\Home\Login.cshtml" />
     <Content Include="Areas\Member\Views\Home\Inscription.cshtml" />
     <Content Include="Areas\Member\Views\Home\AjouterBienMembre.cshtml" />
-    <Content Include="Areas\Member\Views\Home\ListeBiens.cshtml" />
+    <Content Include="Areas\Member\Views\Home\ListBiensMembre.cshtml" />
+    <Content Include="Areas\Member\Views\Home\EditBienMembre.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -184,6 +187,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\_DerniersBiens.cshtml" />
     <Content Include="Views\Shared\_MeilleursEchanges.cshtml" />
+    <Content Include="Views\Shared\_BiensMembre.cshtml" />
+    <Content Include="Views\Home\ListingBiens.cshtml" />
+    <Content Include="Views\Home\DetailsDuBien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\HomeShareDAL\HomeShareDAL\HomeShareDAL.csproj">

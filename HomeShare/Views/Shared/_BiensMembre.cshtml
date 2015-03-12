@@ -1,0 +1,12 @@
+﻿@model IEnumerable<HomeShareDAL.BienEchange>
+
+<div class="col-sm-12">
+    @foreach (HomeShareDAL.BienEchange be in Model)
+    {
+        <ul>
+            <li>@be.Titre</li>
+            <li>@be.DateCreation</li>
+            <li>@be.DescCourte</li>
+        </ul>
+    }
+</div>
